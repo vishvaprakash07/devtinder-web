@@ -8,8 +8,9 @@ import { BASE_URL } from "../utils/constants";
 
 const Login = () => {
 
-  const [emailId, setEmailId] = useState('');
-  const [password, setPassword] = useState('');
+  const [emailId, setEmailId] = useState('vishvaprakash07@gmail.com');
+  const [password, setPassword] = useState('Msdhoni@123');
+  const [error, setError] = useState('')
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -22,6 +23,7 @@ const Login = () => {
       dispatch(addUser(res.data));
       navigate("/feed");
     } catch (err) {
+      setError(err?.response?.data);
       console.log(err);
     }
   };
@@ -30,7 +32,7 @@ const Login = () => {
     <div className="flex justify-center my-10">
       <div className="card bg-base-300 w-96 shadow-sm">
         <div className="card-body">
-          <h2 className="card-title justif`">Login</h2>
+          <h2 className="card-title justify-center">Login</h2>
           <div>
             <fieldset className="fieldset">
               <legend className="fieldset-legend">Email ID:</legend>
@@ -43,6 +45,7 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)} />
             </fieldset>
           </div>
+          {error && <p className="text-red-500 px-3">{error}</p>}
           <div className="card-actions justify-center">
             <button className="btn btn-primary" onClick={handleLogin}>Login</button>
           </div>

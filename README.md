@@ -22,6 +22,12 @@
 - Refactor code to add constants file + create a components folder
 - Should not be able to access other routes without login
 - If token is present, redirect user to login page
+- Logout feature
+- Get the Feed and it in store
+- Build the User Card on Feed
+- Edit profile feature
+- Show toast message on save of profile
+- See all my connections
 
 
 

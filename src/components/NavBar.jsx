@@ -5,7 +5,7 @@ import { BASE_URL } from "../utils/constants";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { removeUser } from "../utils/userSlice";
-import { removeFeed } from "../utils/feedSlice";
+import { clearFeed } from "../utils/feedSlice";
 import { clearConnections } from "../utils/connectionSlice";
 import { clearRequests } from "../utils/requestSlice";
 
@@ -18,7 +18,7 @@ const NavBar = () => {
     try {
       await axios.post(BASE_URL + "/logout", {}, { withCredentials: true });
       dispatch(removeUser());
-      dispatch(removeFeed());
+      dispatch(clearFeed());
       dispatch(clearConnections());
       dispatch(clearRequests());
       return navigate("/login");

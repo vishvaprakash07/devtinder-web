@@ -26,6 +26,21 @@ const Feed = () => {
     getFeed();
   }, []);
 
+  if(!feed) return;
+
+  if(feed.length <= 0) {
+    return (
+      <div className="flex justify-center mt-10">
+        <div className="card bg-base-200 w-96 shadow-sm">
+          <div className="card-body">
+            <h2 className="card-title">No more users in your feed</h2>
+            <p>Check back later for more users to connect with!</p>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
 
   return (
     <div className="flex justify-center mt-10">

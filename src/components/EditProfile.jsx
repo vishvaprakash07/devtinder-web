@@ -103,14 +103,17 @@ const EditProfile = () => {
 
               <fieldset className="fieldset">
                 <legend className="fieldset-legend">Gender:</legend>
-                <input
-                  type="text"
+                <select
                   value={gender}
-                  className="input input-bordered w-full"
-                  placeholder="Gender"
+                  className="select select-bordered w-full"
                   onChange={(e) => setGender(e.target.value)}
-                />
+                >
+                  <option value="">Select gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
               </fieldset>
+
 
               <fieldset className="fieldset">
                 <legend className="fieldset-legend">Age:</legend>

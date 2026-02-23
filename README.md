@@ -35,6 +35,26 @@
 - Compatible on mobile devices
 
 
+# Deployment
+
+- SignUp on AWS
+- Launch an instance
+- chmod 400 <secret>.pem to modify permission.
+- ssh -i "devTinder-secret.pem" ubuntu@ec2-3-107-16-245.ap-southeast-2.compute.amazonaws.com
+- Install node version 22.16.0
+- Git clone 
+- Frontend
+     - npm install -> dependencies install
+     - npm run build
+     - sudo apt update
+     - sudo apt install nginx
+     - sudo systemctl start nginx
+     - sudo systemctl enable nginx
+     - Copy code from dist(build files) to /var/www/html/
+     - sudo scp -r dist/* /var/www/html/
+     - Enable port :80 of your instance
+
+
 
 
 Body

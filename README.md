@@ -53,6 +53,28 @@
      - Copy code from dist(build files) to /var/www/html/
      - sudo scp -r dist/* /var/www/html/
      - Enable port :80 of your instance
+- Backend
+     - Allowed ec2 instance public IP on mongodb server
+     - npm install pm2 -g
+     - pm2 start npm -- start
+     - To check logs, use command pm2 logs
+     - To clear the logs, pm2 flush npm --> npm is the name of the application.
+     - pm2 list --> To list the processes that are running.
+     - pm2 stop npm --> To stop the process.
+     - pm2 delete npm --> To delete the process.
+     - pm2 start npm --name "name" -- start to give a custom name to the process.
+     - config nginx - /etc/nginx/sites-available/default
+     - restart nginx - sudo systemctl restart nginx
+     - Modify the BASEURL in frontend project to "/api"
+
+Frontend = http://3.107.16.245/
+Backend = http://3.107.16.245:7777/
+
+Domain name = devtinder.com => 3.107.16.245
+
+Frontend = devtinder.com
+Backend = devtinder.com:7777 => devtinder.com/api
+
 
 
 
